@@ -5,25 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>玉山主峰遠征計畫｜3,952 M</title>
 <meta name="description" content="6–8 人首登隊的玉山主峰 4 天 3 夜完整計畫：抽籤戰術、行程、裝備、高山症控管。">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M2 26 L12 8 L17 16 L21 10 L30 26 Z' fill='%234a7c59'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23bfe0f5'/><path d='M2 26 L12 8 L17 16 L21 10 L30 26 Z' fill='%234a7c59'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:oklch(0.115 0 0);
-  --bg-raise:oklch(0.155 0.006 160);
-  --line:oklch(0.28 0.012 160);
-  --ink:oklch(0.95 0.005 150);
-  --body:oklch(0.83 0.012 150);
-  --dim:oklch(0.68 0.015 150);
-  --pine:oklch(0.74 0.125 152);
-  --pine-deep:oklch(0.42 0.1 152);
-  --pine-wash:oklch(0.22 0.035 155);
-  --dawn:oklch(0.83 0.128 78);
-  --dawn-deep:oklch(0.62 0.14 60);
-  --alert:oklch(0.74 0.15 27);
-  --z-nav:10;--z-top:20;
+  --bg:oklch(1 0 0);
+  --wash:oklch(0.965 0.014 140);
+  --line:oklch(0.885 0.015 140);
+  --ink:oklch(0.235 0.02 145);
+  --body:oklch(0.33 0.018 145);
+  --dim:oklch(0.47 0.02 145);
+  --grass:oklch(0.52 0.125 145);
+  --grass-deep:oklch(0.40 0.105 148);
+  --sky:oklch(0.55 0.11 240);
+  --sun:oklch(0.78 0.135 82);
+  --sun-deep:oklch(0.53 0.115 68);
+  --earth:oklch(0.45 0.06 60);
+  --alert:oklch(0.53 0.185 28);
+  --z-nav:10;
   --serif:"Noto Serif TC",serif;
   --sans:"Noto Sans TC",sans-serif;
 }
@@ -38,51 +39,51 @@ body{
   font-family:var(--sans);font-size:1.0625rem;line-height:1.85;
   -webkit-font-smoothing:antialiased;
 }
-::selection{background:var(--pine-deep);color:var(--ink)}
+::selection{background:oklch(0.85 0.08 140);color:var(--ink)}
 h1,h2,h3,h4{font-family:var(--serif);color:var(--ink);line-height:1.3;text-wrap:balance;font-weight:900}
 p{text-wrap:pretty}
-a{color:var(--pine);text-decoration-thickness:1px;text-underline-offset:3px}
+a{color:var(--grass-deep);text-decoration-thickness:1px;text-underline-offset:3px}
 strong{color:var(--ink);font-weight:700}
 .wrap{max-width:68rem;margin-inline:auto;padding-inline:clamp(1.25rem,4vw,2.5rem)}
-.prose{max-width:42rem}
 
 /* ───────── nav ───────── */
 .nav{
   position:sticky;top:0;z-index:var(--z-nav);
-  background:color-mix(in oklab,var(--bg) 88%,transparent);
+  background:color-mix(in oklab,var(--bg) 90%,transparent);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);
 }
 .nav-inner{display:flex;align-items:center;gap:1.5rem;height:3.5rem;max-width:68rem;margin-inline:auto;padding-inline:clamp(1.25rem,4vw,2.5rem)}
 .nav-mark{font-family:var(--serif);font-weight:900;color:var(--ink);font-size:1rem;text-decoration:none;white-space:nowrap}
-.nav-mark span{color:var(--dawn)}
+.nav-mark span{color:var(--grass)}
 .nav-links{display:flex;gap:1.1rem;overflow-x:auto;scrollbar-width:none;margin-left:auto}
 .nav-links::-webkit-scrollbar{display:none}
 .nav-links a{color:var(--dim);text-decoration:none;font-size:.875rem;white-space:nowrap;padding-block:.35rem}
-.nav-links a:hover{color:var(--pine)}
+.nav-links a:hover{color:var(--grass-deep)}
 
 /* ───────── hero ───────── */
 .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
 .hero-scene{position:absolute;inset:0;width:100%;height:100%;display:block}
-.hero-inner{position:relative;padding-block:clamp(5rem,14vh,9rem) clamp(3rem,8vh,5rem)}
-.hero h1{font-size:clamp(2.6rem,7.5vw,5.25rem);letter-spacing:.04em;color:var(--ink)}
+.hero-inner{position:relative;padding-block:clamp(5rem,14vh,9rem) clamp(9rem,22vh,13rem)}
+.hero h1{font-size:clamp(2.6rem,7.5vw,5.25rem);letter-spacing:.04em}
 .hero .alt{
-  font-family:var(--serif);font-weight:600;color:var(--dawn);
+  font-family:var(--serif);font-weight:600;color:var(--grass-deep);
   font-size:clamp(1.15rem,2.6vw,1.6rem);letter-spacing:.14em;margin-top:.75rem;
   font-variant-numeric:tabular-nums;
 }
-.hero .lede{max-width:34rem;margin-top:1.5rem;color:var(--body);font-size:1.0625rem}
-.hero-facts{display:flex;flex-wrap:wrap;gap:2.25rem;margin-top:2.75rem}
+.hero .lede{max-width:32rem;margin-top:1.5rem;color:var(--body);font-size:1.0625rem}
+.hero-facts{display:flex;flex-wrap:wrap;gap:1.75rem 2.25rem;margin-top:2.5rem}
 .hero-facts div{min-width:7rem}
 .hero-facts dt{font-size:.8125rem;color:var(--dim)}
 .hero-facts dd{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:1.35rem;font-variant-numeric:tabular-nums}
 .countdown{
-  margin-top:3rem;display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:.6rem 1rem;
-  border:1px solid var(--line);background:color-mix(in oklab,var(--bg-raise) 80%,transparent);
+  margin-top:2.75rem;display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:.6rem 1rem;
+  border:1px solid var(--line);background:color-mix(in oklab,var(--bg) 82%,transparent);
+  backdrop-filter:blur(4px);
   padding:.9rem 1.4rem;border-radius:.5rem;
 }
 .countdown .cd-label{font-size:.875rem;color:var(--dim)}
-.countdown .cd-num{font-family:var(--serif);font-weight:900;font-size:1.6rem;color:var(--dawn);font-variant-numeric:tabular-nums}
+.countdown .cd-num{font-family:var(--serif);font-weight:900;font-size:1.6rem;color:var(--sun-deep);font-variant-numeric:tabular-nums}
 .countdown .cd-date{font-size:.875rem;color:var(--body)}
 
 /* ───────── sections ───────── */
@@ -94,9 +95,9 @@ section + section{border-top:1px solid var(--line)}
 
 /* 摘要 statements */
 .vows{display:grid;gap:0;border:1px solid var(--line);border-radius:.6rem;overflow:hidden}
-.vow{display:grid;grid-template-columns:8.5rem 1fr;gap:1.25rem;padding:1.35rem 1.5rem;background:var(--bg-raise)}
+.vow{display:grid;grid-template-columns:9.5rem 1fr;gap:1.25rem;padding:1.35rem 1.5rem;background:var(--wash)}
 .vow + .vow{border-top:1px solid var(--line)}
-.vow .k{font-family:var(--serif);font-weight:600;color:var(--dawn);font-size:1.05rem;padding-top:.1rem}
+.vow .k{font-family:var(--serif);font-weight:600;color:var(--grass-deep);font-size:1.05rem;padding-top:.1rem}
 .vow .k.alert{color:var(--alert)}
 .vow p{color:var(--body)}
 @media (max-width:38rem){.vow{grid-template-columns:1fr;gap:.3rem}}
@@ -111,68 +112,68 @@ section + section{border-top:1px solid var(--line)}
 }
 .day + .day{border-top:1px dashed var(--line)}
 .day-tag .d{font-family:var(--serif);font-weight:900;font-size:1.5rem;color:var(--ink)}
-.day-tag .t{color:var(--pine);font-size:.9rem;margin-top:.2rem}
+.day-tag .t{color:var(--grass);font-size:.9rem;margin-top:.2rem;font-weight:700}
 .day-tag .alt{color:var(--dim);font-size:.85rem;margin-top:.75rem;font-variant-numeric:tabular-nums}
 .day-body h3{font-size:1.2rem;margin-bottom:.6rem}
 .day-body ul{list-style:none;margin-top:.4rem}
 .day-body li{padding-left:1.4rem;position:relative;margin-block:.45rem}
-.day-body li::before{content:"";position:absolute;left:.15rem;top:.78em;width:.45rem;height:.45rem;border-radius:50%;background:var(--pine-deep)}
-.day-body li.gold::before{background:var(--dawn)}
+.day-body li::before{content:"";position:absolute;left:.15rem;top:.78em;width:.45rem;height:.45rem;border-radius:50%;background:var(--grass)}
+.day-body li.gold::before{background:var(--sun)}
 .day-body .hint{color:var(--dim);font-size:.9rem;margin-top:.9rem}
 @media (max-width:38rem){.day{grid-template-columns:1fr;gap:.6rem}}
 
 /* meal table + generic tables */
 table{width:100%;border-collapse:collapse;font-size:.95rem}
-.table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:.6rem}
+.table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:.6rem;background:var(--bg)}
 .table-scroll table{min-width:34rem}
-th{font-family:var(--sans);font-weight:700;color:var(--ink);text-align:left;font-size:.85rem;background:var(--pine-wash);padding:.7rem 1rem;white-space:nowrap}
+th{font-family:var(--sans);font-weight:700;color:var(--ink);text-align:left;font-size:.85rem;background:var(--wash);padding:.7rem 1rem;white-space:nowrap}
 td{padding:.7rem 1rem;border-top:1px solid var(--line);vertical-align:top}
 td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
-tr.total td{background:var(--bg-raise);color:var(--ink);font-weight:700}
+tr.total td{background:var(--wash);color:var(--ink);font-weight:700}
 .tnote{color:var(--dim);font-size:.875rem;margin-top:.8rem}
 
 /* plan C/D */
 .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
-.plan{border:1px solid var(--line);border-radius:.6rem;padding:1.6rem 1.6rem 1.4rem;background:var(--bg-raise)}
-.plan .badge{font-family:var(--serif);font-weight:900;font-size:2rem;color:var(--dawn)}
+.plan{border:1px solid var(--line);border-radius:.6rem;padding:1.6rem 1.6rem 1.4rem;background:var(--wash)}
+.plan .badge{font-family:var(--serif);font-weight:900;font-size:2rem;color:var(--sun-deep)}
 .plan h3{font-size:1.15rem;margin-top:.3rem}
 .plan .days{margin-top:1rem;display:flex;gap:.4rem;flex-wrap:wrap}
 .plan .days b{
   font-weight:500;font-size:.85rem;border:1px solid var(--line);border-radius:.35rem;
-  padding:.2rem .6rem;color:var(--dim);white-space:nowrap
+  padding:.2rem .6rem;color:var(--dim);white-space:nowrap;background:var(--bg)
 }
-.plan .days b.on{border-color:var(--pine-deep);background:var(--pine-wash);color:var(--ink)}
+.plan .days b.on{border-color:var(--grass);background:oklch(0.90 0.05 140);color:var(--ink)}
 .plan p{margin-top:1rem;font-size:.95rem}
 
 /* checklist */
 .gear-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
-.gear-group{border:1px solid var(--line);border-radius:.6rem;padding:1.35rem 1.5rem;background:var(--bg-raise)}
-.gear-group h3{font-size:1.02rem;color:var(--pine);margin-bottom:.8rem}
+.gear-group{border:1px solid var(--line);border-radius:.6rem;padding:1.35rem 1.5rem;background:var(--wash)}
+.gear-group h3{font-size:1.02rem;color:var(--grass-deep);margin-bottom:.8rem}
 .check{display:flex;gap:.75rem;align-items:flex-start;padding-block:.42rem;cursor:pointer;font-size:.95rem}
 .check input{
   appearance:none;flex:none;width:1.15rem;height:1.15rem;margin-top:.32em;
   border:1.5px solid var(--dim);border-radius:.3rem;cursor:pointer;position:relative;
   transition:background .15s cubic-bezier(.19,1,.22,1),border-color .15s;
-  background:transparent;
+  background:var(--bg);
 }
-.check input:checked{background:var(--pine);border-color:var(--pine)}
+.check input:checked{background:var(--grass);border-color:var(--grass)}
 .check input:checked::after{
   content:"";position:absolute;left:.3rem;top:.09rem;width:.28rem;height:.62rem;
-  border:solid var(--bg);border-width:0 2px 2px 0;transform:rotate(42deg);
+  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(42deg);
 }
-.check input:focus-visible{outline:2px solid var(--dawn);outline-offset:2px}
-.check.done span{color:var(--dim);text-decoration:line-through;text-decoration-color:var(--pine-deep)}
+.check input:focus-visible{outline:2px solid var(--sun-deep);outline-offset:2px}
+.check.done span{color:var(--dim);text-decoration:line-through;text-decoration-color:var(--grass)}
 .check small{display:block;color:var(--dim);font-size:.82rem}
 .check.done small{text-decoration:none}
 .gear-progress{margin-top:1.75rem;color:var(--dim);font-size:.9rem;font-variant-numeric:tabular-nums}
-.gear-progress b{color:var(--dawn);font-family:var(--serif);font-size:1.05rem}
-.gear-reset{margin-left:1rem;background:none;border:1px solid var(--line);color:var(--dim);border-radius:.35rem;padding:.25rem .7rem;font-size:.8rem;cursor:pointer;font-family:var(--sans)}
+.gear-progress b{color:var(--sun-deep);font-family:var(--serif);font-size:1.05rem}
+.gear-reset{margin-left:1rem;background:var(--bg);border:1px solid var(--line);color:var(--dim);border-radius:.35rem;padding:.25rem .7rem;font-size:.8rem;cursor:pointer;font-family:var(--sans)}
 .gear-reset:hover{color:var(--ink);border-color:var(--dim)}
 
 /* rules */
 .rules{display:grid;gap:0;border:1px solid var(--line);border-radius:.6rem;overflow:hidden}
 .rule{display:grid;grid-template-columns:10rem 1fr;gap:1.25rem;padding:1.15rem 1.5rem}
-.rule:nth-child(odd){background:var(--bg-raise)}
+.rule:nth-child(odd){background:var(--wash)}
 .rule .k{font-weight:700;color:var(--ink);font-size:.95rem}
 .rule p{font-size:.95rem}
 .rule p em{font-style:normal;color:var(--alert);font-weight:700}
@@ -180,14 +181,14 @@ tr.total td{background:var(--bg-raise);color:var(--ink);font-weight:700}
 
 /* AMS two-block */
 .ams{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
-.ams-block{border:1px solid var(--line);border-radius:.6rem;padding:1.6rem;background:var(--bg-raise)}
+.ams-block{border:1px solid var(--line);border-radius:.6rem;padding:1.6rem;background:var(--wash)}
 .ams-block h3{font-size:1.15rem;margin-bottom:1rem}
-.ams-block h3 span{color:var(--pine);font-family:var(--sans);font-weight:500;font-size:.85rem;display:block;margin-top:.2rem}
+.ams-block h3 span{color:var(--grass-deep);font-family:var(--sans);font-weight:500;font-size:.85rem;display:block;margin-top:.2rem}
 .ams-block ol{margin-left:1.2rem}
 .ams-block li{margin-block:.55rem;font-size:.95rem}
 .grade{display:grid;gap:.6rem;margin-block:.9rem}
-.grade div{border:1px solid var(--line);border-radius:.45rem;padding:.7rem .95rem;font-size:.9rem}
-.grade .g1 b{color:var(--dawn)}
+.grade div{border:1px solid var(--line);border-radius:.45rem;padding:.7rem .95rem;font-size:.9rem;background:var(--bg)}
+.grade .g1 b{color:var(--sun-deep)}
 .grade .g2{border-color:color-mix(in oklab,var(--alert) 45%,var(--line))}
 .grade .g2 b{color:var(--alert)}
 
@@ -197,15 +198,15 @@ tr.total td{background:var(--bg-raise);color:var(--ink);font-weight:700}
 .sop li{position:relative;padding:0 0 1.6rem 2rem}
 .sop li::before{
   content:"";position:absolute;left:-.12rem;top:.42em;width:.95rem;height:.95rem;border-radius:50%;
-  background:var(--bg);border:2.5px solid var(--pine);
+  background:var(--bg);border:2.5px solid var(--grass);
 }
-.sop li.now::before{background:var(--dawn);border-color:var(--dawn)}
+.sop li.now::before{background:var(--sun);border-color:var(--sun-deep)}
 .sop .when{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:1.05rem}
 .sop p{font-size:.95rem;margin-top:.3rem}
 
 /* phones */
 .phones{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
-.phone{border:1px solid var(--line);border-radius:.6rem;padding:1.1rem 1.3rem;background:var(--bg-raise)}
+.phone{border:1px solid var(--line);border-radius:.6rem;padding:1.1rem 1.3rem;background:var(--wash)}
 .phone .who{font-size:.875rem;color:var(--dim)}
 .phone .num{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:1.1rem;margin-top:.25rem;font-variant-numeric:tabular-nums}
 .phone .num a{color:var(--ink);text-decoration:none}
@@ -213,7 +214,7 @@ tr.total td{background:var(--bg-raise);color:var(--ink);font-weight:700}
 .phone.sos{border-color:color-mix(in oklab,var(--alert) 45%,var(--line))}
 .phone.sos .num{color:var(--alert)}
 
-footer{border-top:1px solid var(--line);padding-block:2.5rem 3.5rem;color:var(--dim);font-size:.875rem}
+footer{border-top:1px solid var(--line);padding-block:2.5rem 3.5rem;color:var(--dim);font-size:.875rem;background:var(--wash)}
 footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bottom:.4rem}
 
 /* reveal (enhance visible default) */
@@ -243,38 +244,54 @@ footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bot
 </nav>
 
 <header class="hero" id="top">
-  <svg class="hero-scene" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+  <svg class="hero-scene" viewBox="0 0 1440 820" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
     <defs>
       <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="oklch(0.10 0.012 265)"/>
-        <stop offset="0.55" stop-color="oklch(0.14 0.022 255)"/>
-        <stop offset="0.82" stop-color="oklch(0.24 0.045 240)"/>
-        <stop offset="1" stop-color="oklch(0.38 0.075 75)"/>
+        <stop offset="0" stop-color="oklch(0.72 0.105 245)"/>
+        <stop offset="0.55" stop-color="oklch(0.86 0.06 235)"/>
+        <stop offset="0.78" stop-color="oklch(0.945 0.028 220)"/>
       </linearGradient>
-      <linearGradient id="dawnline" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0" stop-color="oklch(0.55 0.1 60 / 0)"/>
-        <stop offset="0.5" stop-color="oklch(0.78 0.13 75 / 0.85)"/>
-        <stop offset="1" stop-color="oklch(0.55 0.1 60 / 0)"/>
+      <radialGradient id="sunglow" cx="0.5" cy="0.5" r="0.5">
+        <stop offset="0" stop-color="oklch(0.97 0.09 95)"/>
+        <stop offset="0.35" stop-color="oklch(0.94 0.10 90 / 0.75)"/>
+        <stop offset="1" stop-color="oklch(0.94 0.10 90 / 0)"/>
+      </radialGradient>
+      <linearGradient id="grass1" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="oklch(0.68 0.115 132)"/>
+        <stop offset="1" stop-color="oklch(0.56 0.115 140)"/>
+      </linearGradient>
+      <linearGradient id="grass2" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="oklch(0.58 0.115 138)"/>
+        <stop offset="1" stop-color="oklch(0.46 0.10 145)"/>
       </linearGradient>
     </defs>
-    <rect width="1440" height="760" fill="url(#sky)"/>
-    <g fill="oklch(0.9 0.02 90)">
-      <circle cx="150" cy="90" r="1.3"/><circle cx="320" cy="150" r="1"/><circle cx="480" cy="60" r="1.5"/>
-      <circle cx="640" cy="180" r="1"/><circle cx="810" cy="90" r="1.2"/><circle cx="960" cy="200" r="1"/>
-      <circle cx="1100" cy="70" r="1.4"/><circle cx="1240" cy="160" r="1"/><circle cx="1380" cy="110" r="1.2"/>
-      <circle cx="240" cy="250" r="1"/><circle cx="720" cy="280" r="1.1"/><circle cx="1180" cy="260" r="1"/>
-      <circle cx="60" cy="180" r="1"/><circle cx="900" cy="40" r="1"/><circle cx="1320" cy="320" r="1"/>
+    <rect width="1440" height="820" fill="url(#sky)"/>
+    <circle cx="1130" cy="160" r="190" fill="url(#sunglow)"/>
+    <circle cx="1130" cy="160" r="46" fill="oklch(0.965 0.075 95)"/>
+    <g fill="oklch(0.985 0.005 220)" opacity="0.85">
+      <ellipse cx="300" cy="150" rx="110" ry="22"/>
+      <ellipse cx="380" cy="132" rx="70" ry="16"/>
+      <ellipse cx="820" cy="90" rx="90" ry="17"/>
+      <ellipse cx="885" cy="76" rx="52" ry="12"/>
     </g>
-    <rect x="0" y="586" width="1440" height="3" fill="url(#dawnline)"/>
-    <path d="M0 640 L180 520 L340 600 L520 470 L700 590 L900 430 L1080 560 L1250 480 L1440 570 L1440 760 L0 760 Z"
-          fill="oklch(0.20 0.03 230)"/>
-    <path d="M0 690 L220 590 L400 660 L640 540 L840 650 L1010 520 L1200 640 L1440 560 L1440 760 L0 760 Z"
-          fill="oklch(0.16 0.025 200)"/>
-    <path d="M0 760 L0 700 L260 640 L520 710 L760 620 L980 700 L1230 630 L1440 690 L1440 760 Z"
-          fill="oklch(0.125 0.018 170)"/>
-    <g fill="oklch(0.85 0.12 80)">
-      <circle cx="1002" cy="688" r="2.4"/><circle cx="962" cy="678" r="2"/><circle cx="922" cy="684" r="1.8"/>
-      <circle cx="878" cy="668" r="2"/><circle cx="836" cy="658" r="1.6"/><circle cx="800" cy="648" r="1.6"/>
+    <path d="M0 470 L200 430 L390 462 L560 415 L760 455 L980 425 L1180 452 L1440 430 L1440 620 L0 620 Z"
+          fill="oklch(0.78 0.045 240)"/>
+    <path d="M540 470 L790 240 L840 300 L880 258 L1090 470 Z" fill="oklch(0.585 0.05 250)"/>
+    <path d="M790 240 L840 300 L880 258 L847 262 Z" fill="oklch(0.72 0.035 245)"/>
+    <path d="M0 540 L260 470 L480 525 L700 468 L930 520 L1150 475 L1440 520 L1440 700 L0 700 Z"
+          fill="oklch(0.62 0.09 150)"/>
+    <path d="M0 640 L240 575 L520 630 L820 565 L1120 625 L1440 580 L1440 820 L0 820 Z" fill="url(#grass1)"/>
+    <path d="M0 760 L300 700 L640 755 L980 695 L1300 750 L1440 720 L1440 820 L0 820 Z" fill="url(#grass2)"/>
+    <path d="M240 690 Q 420 660 560 675 T 900 640 T 1180 610" fill="none"
+          stroke="oklch(0.62 0.055 65)" stroke-width="5" stroke-dasharray="2 14" stroke-linecap="round"/>
+    <g fill="oklch(0.35 0.075 150)">
+      <path d="M96 700 L118 640 L140 700 Z"/><path d="M104 668 L118 622 L132 668 Z"/><rect x="114" y="700" width="8" height="16"/>
+      <path d="M176 712 L202 640 L228 712 Z"/><path d="M185 674 L202 620 L219 674 Z"/><rect x="198" y="712" width="9" height="18"/>
+      <path d="M1244 668 L1268 600 L1292 668 Z"/><path d="M1252 634 L1268 582 L1284 634 Z"/><rect x="1263" y="668" width="9" height="17"/>
+      <path d="M1330 700 L1352 640 L1374 700 Z"/><path d="M1338 668 L1352 624 L1366 668 Z"/><rect x="1348" y="700" width="8" height="15"/>
+    </g>
+    <g fill="oklch(0.42 0.05 60)">
+      <circle cx="565" cy="672" r="4"/><circle cx="590" cy="668" r="4"/><circle cx="615" cy="663" r="4"/>
     </g>
   </svg>
   <div class="wrap hero-inner">
@@ -306,7 +323,7 @@ footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bot
     <div class="vows rv">
       <div class="vow"><span class="k">目標</span><p>10 月中～11 月中，選<strong>週五（D 案）或週日（C 案）</strong>入住排雲山莊，隔天凌晨攻頂。</p></div>
       <div class="vow"><span class="k">現在就做</span><p>名單一次到位（事後不能加人）、決定 C 或 D、找好留守人，<strong>8/16 起開始投單</strong>。</p></div>
-      <div class="vow"><span class="k alert">三個死線</span><p>中籤後 <strong>3 日內</strong>繳 480｜入園日<strong>前 5 日</strong>取消才退費｜東埔訂房確認後 <strong>3 日內</strong>匯款。</p></div>
+      <div class="vow"><span class="k alert">三個關鍵期限</span><p>中籤後 <strong>3 日內</strong>繳 480｜入園日<strong>前 5 日</strong>取消才退費｜東埔訂房確認後 <strong>3 日內</strong>匯款。</p></div>
       <div class="vow"><span class="k alert">一條鐵律</span><p>可減人、<strong>不可換人、不可加人</strong>。投單名單就是最終名單。</p></div>
       <div class="vow"><span class="k">最大風險</span><p>高山症。8 月中<strong>各自</strong>去家醫科拿藥，山上撤退聽領隊，不投票、不討價還價。</p></div>
     </div>
@@ -324,31 +341,31 @@ footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bot
       <svg viewBox="0 0 1000 300" role="img" aria-label="海拔剖面：登山口 2,610 公尺、孟祿亭 2,838 公尺、排雲山莊 3,402 公尺、玉山主峰 3,952 公尺">
         <defs>
           <linearGradient id="pf" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="oklch(0.42 0.1 152 / 0.55)"/>
-            <stop offset="1" stop-color="oklch(0.42 0.1 152 / 0.02)"/>
+            <stop offset="0" stop-color="oklch(0.62 0.115 145 / 0.5)"/>
+            <stop offset="1" stop-color="oklch(0.62 0.115 145 / 0.04)"/>
           </linearGradient>
         </defs>
         <polyline points="40,262 90,256 210,238 330,226 450,205 570,186 700,148 820,120 900,52"
-                  fill="none" stroke="oklch(0.74 0.125 152)" stroke-width="2.5" stroke-linejoin="round"/>
+                  fill="none" stroke="oklch(0.52 0.125 145)" stroke-width="2.5" stroke-linejoin="round"/>
         <path d="M40 262 L90 256 L210 238 L330 226 L450 205 L570 186 L700 148 L820 120 L900 52 L900 290 L40 290 Z" fill="url(#pf)"/>
-        <g fill="oklch(0.95 0.005 150)" font-size="15" font-family="Noto Sans TC,sans-serif">
-          <circle cx="40" cy="262" r="4" fill="oklch(0.74 0.125 152)"/>
+        <g fill="oklch(0.235 0.02 145)" font-size="15" font-family="Noto Sans TC,sans-serif">
+          <circle cx="40" cy="262" r="4" fill="oklch(0.52 0.125 145)"/>
           <text x="40" y="245" text-anchor="start">登山口 2,610</text>
-          <circle cx="210" cy="238" r="4" fill="oklch(0.74 0.125 152)"/>
+          <circle cx="210" cy="238" r="4" fill="oklch(0.52 0.125 145)"/>
           <text x="210" y="221" text-anchor="middle">孟祿亭 2,838</text>
-          <circle cx="570" cy="186" r="4" fill="oklch(0.74 0.125 152)"/>
+          <circle cx="570" cy="186" r="4" fill="oklch(0.52 0.125 145)"/>
           <text x="570" y="169" text-anchor="middle">白木林 3,093</text>
-          <circle cx="700" cy="148" r="5" fill="oklch(0.83 0.128 78)"/>
+          <circle cx="700" cy="148" r="5" fill="oklch(0.62 0.13 70)"/>
           <text x="700" y="131" text-anchor="middle">排雲山莊 3,402</text>
-          <circle cx="900" cy="52" r="6" fill="oklch(0.83 0.128 78)"/>
+          <circle cx="900" cy="52" r="6" fill="oklch(0.62 0.13 70)"/>
           <text x="898" y="34" text-anchor="middle" font-family="Noto Serif TC,serif" font-weight="700" font-size="17">主峰 3,952</text>
         </g>
-        <g stroke="oklch(0.28 0.012 160)" stroke-dasharray="3 5">
+        <g stroke="oklch(0.885 0.015 140)" stroke-dasharray="3 5">
           <line x1="40" y1="290" x2="40" y2="268"/>
           <line x1="700" y1="290" x2="700" y2="154"/>
           <line x1="900" y1="290" x2="900" y2="58"/>
         </g>
-        <g fill="oklch(0.68 0.015 150)" font-size="13" font-family="Noto Sans TC,sans-serif">
+        <g fill="oklch(0.47 0.02 145)" font-size="13" font-family="Noto Sans TC,sans-serif">
           <text x="40" y="308" text-anchor="start">0 K</text>
           <text x="700" y="308" text-anchor="middle">8.5 K</text>
           <text x="900" y="308" text-anchor="middle">10.9 K</text>
@@ -376,7 +393,7 @@ footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bot
             <li>07:15 前在排雲登山服務中心報到（<strong>全員身分證正本</strong>），從東埔山莊步行前往即可</li>
             <li>接駁車進登山口（150 元/人），08:00 前起登；午餐吃行動糧</li>
             <li>下午抵排雲山莊，15:00 起憑訂餐紀錄領餐券與睡袋</li>
-            <li class="gold">晚餐（17:00–18:30）前逐人健康檢查，這是高山症觀察窗</li>
+            <li class="gold">晚餐（17:00–18:30）前做高山症檢查：領隊逐人問頭痛、噁心、頭暈、異常疲倦，觀察精神與步態</li>
           </ul>
           <p class="hint">排雲無淋浴、無垃圾桶；熱水為飲用熱水。垃圾全數背下山。</p>
         </div>
@@ -410,7 +427,7 @@ footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bot
         <thead><tr><th>套餐內容</th><th>時間</th><th>對應行程</th></tr></thead>
         <tbody>
           <tr><td>領餐券＋睡袋</td><td class="num">Day 2 15:00 起</td><td>抵排雲辦入住後領取（以現場公告為準）</td></tr>
-          <tr><td>晚餐</td><td class="num">Day 2 17:00–18:30</td><td>用餐前做健康檢查</td></tr>
+          <tr><td>晚餐</td><td class="num">Day 2 17:00–18:30</td><td>用餐前做高山症症狀確認</td></tr>
           <tr><td>早早餐</td><td class="num">Day 3 01:30–03:30</td><td>攻頂前熱食；分到太晚的梯次就協調提早，或接受日出後登頂，不為趕日出趕路</td></tr>
           <tr><td>早午餐</td><td class="num">Day 3 08:00–10:00</td><td>回排雲後，約 08:00–08:30 吃</td></tr>
           <tr><td>睡袋歸還</td><td class="num">Day 3 離開前</td><td>09:00 前收裝一併歸還</td></tr>
@@ -424,7 +441,7 @@ footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bot
   <div class="wrap">
     <div class="sec-head rv">
       <h2>花費・每人</h2>
-      <p class="sub">全程約 <strong style="color:var(--dawn)">3,730–4,560 元</strong>。只有排雲床位費有繳費死線：中籤後 3 日內。</p>
+      <p class="sub">全程約 <strong style="color:var(--sun-deep)">3,730–4,560 元</strong>。只有排雲床位費有繳費期限：中籤後 3 日內。</p>
     </div>
     <div class="table-scroll rv">
       <table>
@@ -446,7 +463,7 @@ footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bot
         </tbody>
       </table>
     </div>
-    <p class="tnote rv">多報者的排雲 480 由本人自繳；行事曆標記「入園日前 5 日」＝退費死線（實拿退 450）。</p>
+    <p class="tnote rv">多報者的排雲 480 由本人自繳；行事曆標記「入園日前 5 日」＝退費期限（實拿退 450）。</p>
   </div>
 </section>
 
@@ -502,7 +519,7 @@ footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bot
   <div class="wrap">
     <div class="sec-head rv">
       <h2>抽籤作戰</h2>
-      <p class="sub">排雲山莊 136 床，用抽的。我們的打法：週五案＋週日案並行、投到 11 月中為止。</p>
+      <p class="sub">排雲山莊 136 床，用抽的。我們的打法:週五案＋週日案並行、投到 11 月中為止。</p>
     </div>
 
     <div class="plans rv" style="margin-bottom:2.5rem">
@@ -571,7 +588,7 @@ footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bot
           <li><strong>備藥</strong>：Diamox 需處方：8 月中就各自掛家醫科（醫師要逐人篩禁忌：磺胺類過敏、蠶豆症、肝腎疾病禁用；平地先試吃）</li>
           <li><strong>保暖、避免忽冷忽熱</strong>：休息就加衣、起步前再脫、汗濕底層盡快換；失溫會誘發高山症</li>
           <li><strong>感冒、發燒者直接退出</strong>（大幅提高肺水腫風險）</li>
-          <li>兩個強制檢查點：Day 2 抵排雲觀察 2–3 小時＋晚餐前逐人確認；Day 3 凌晨用餐時逐人問症狀</li>
+          <li>兩個強制檢查點：Day 2 抵排雲觀察 2–3 小時＋晚餐前逐人症狀確認；Day 3 凌晨用餐時再問一輪</li>
         </ol>
       </div>
       <div class="ams-block rv">
@@ -629,7 +646,7 @@ footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bot
       </li>
       <li>
         <div class="when">中籤當下</div>
-        <p>搶訂東埔 → 3 日內繳 480 → 雲之端訂餐 → 撤回其餘投單・行事曆標「前 5 日」退費死線</p>
+        <p>搶訂東埔 → 3 日內繳 480 → 雲之端訂餐 → 撤回其餘投單・行事曆標「前 5 日」退費期限</p>
       </li>
       <li>
         <div class="when">出發前 1 週</div>
