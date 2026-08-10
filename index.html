@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>玉山主峰遠征計畫｜3,952 M</title>
+<meta name="description" content="6–8 人首登隊的玉山主峰 4 天 3 夜完整計畫：抽籤戰術、行程、裝備、高山症控管。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M2 26 L12 8 L17 16 L21 10 L30 26 Z' fill='%234a7c59'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:oklch(0.115 0 0);
+  --bg-raise:oklch(0.155 0.006 160);
+  --line:oklch(0.28 0.012 160);
+  --ink:oklch(0.95 0.005 150);
+  --body:oklch(0.83 0.012 150);
+  --dim:oklch(0.68 0.015 150);
+  --pine:oklch(0.74 0.125 152);
+  --pine-deep:oklch(0.42 0.1 152);
+  --pine-wash:oklch(0.22 0.035 155);
+  --dawn:oklch(0.83 0.128 78);
+  --dawn-deep:oklch(0.62 0.14 60);
+  --alert:oklch(0.74 0.15 27);
+  --z-nav:10;--z-top:20;
+  --serif:"Noto Serif TC",serif;
+  --sans:"Noto Sans TC",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+body{
+  background:var(--bg);color:var(--body);
+  font-family:var(--sans);font-size:1.0625rem;line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--pine-deep);color:var(--ink)}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--ink);line-height:1.3;text-wrap:balance;font-weight:900}
+p{text-wrap:pretty}
+a{color:var(--pine);text-decoration-thickness:1px;text-underline-offset:3px}
+strong{color:var(--ink);font-weight:700}
+.wrap{max-width:68rem;margin-inline:auto;padding-inline:clamp(1.25rem,4vw,2.5rem)}
+.prose{max-width:42rem}
+
+/* ───────── nav ───────── */
+.nav{
+  position:sticky;top:0;z-index:var(--z-nav);
+  background:color-mix(in oklab,var(--bg) 88%,transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;gap:1.5rem;height:3.5rem;max-width:68rem;margin-inline:auto;padding-inline:clamp(1.25rem,4vw,2.5rem)}
+.nav-mark{font-family:var(--serif);font-weight:900;color:var(--ink);font-size:1rem;text-decoration:none;white-space:nowrap}
+.nav-mark span{color:var(--dawn)}
+.nav-links{display:flex;gap:1.1rem;overflow-x:auto;scrollbar-width:none;margin-left:auto}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{color:var(--dim);text-decoration:none;font-size:.875rem;white-space:nowrap;padding-block:.35rem}
+.nav-links a:hover{color:var(--pine)}
+
+/* ───────── hero ───────── */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-scene{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero-inner{position:relative;padding-block:clamp(5rem,14vh,9rem) clamp(3rem,8vh,5rem)}
+.hero h1{font-size:clamp(2.6rem,7.5vw,5.25rem);letter-spacing:.04em;color:var(--ink)}
+.hero .alt{
+  font-family:var(--serif);font-weight:600;color:var(--dawn);
+  font-size:clamp(1.15rem,2.6vw,1.6rem);letter-spacing:.14em;margin-top:.75rem;
+  font-variant-numeric:tabular-nums;
+}
+.hero .lede{max-width:34rem;margin-top:1.5rem;color:var(--body);font-size:1.0625rem}
+.hero-facts{display:flex;flex-wrap:wrap;gap:2.25rem;margin-top:2.75rem}
+.hero-facts div{min-width:7rem}
+.hero-facts dt{font-size:.8125rem;color:var(--dim)}
+.hero-facts dd{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:1.35rem;font-variant-numeric:tabular-nums}
+.countdown{
+  margin-top:3rem;display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:.6rem 1rem;
+  border:1px solid var(--line);background:color-mix(in oklab,var(--bg-raise) 80%,transparent);
+  padding:.9rem 1.4rem;border-radius:.5rem;
+}
+.countdown .cd-label{font-size:.875rem;color:var(--dim)}
+.countdown .cd-num{font-family:var(--serif);font-weight:900;font-size:1.6rem;color:var(--dawn);font-variant-numeric:tabular-nums}
+.countdown .cd-date{font-size:.875rem;color:var(--body)}
+
+/* ───────── sections ───────── */
+section{padding-block:clamp(3.5rem,9vh,6.5rem)}
+section + section{border-top:1px solid var(--line)}
+.sec-head{margin-bottom:clamp(1.75rem,4vh,3rem)}
+.sec-head h2{font-size:clamp(1.7rem,3.6vw,2.5rem)}
+.sec-head .sub{color:var(--dim);margin-top:.6rem;max-width:40rem}
+
+/* 摘要 statements */
+.vows{display:grid;gap:0;border:1px solid var(--line);border-radius:.6rem;overflow:hidden}
+.vow{display:grid;grid-template-columns:8.5rem 1fr;gap:1.25rem;padding:1.35rem 1.5rem;background:var(--bg-raise)}
+.vow + .vow{border-top:1px solid var(--line)}
+.vow .k{font-family:var(--serif);font-weight:600;color:var(--dawn);font-size:1.05rem;padding-top:.1rem}
+.vow .k.alert{color:var(--alert)}
+.vow p{color:var(--body)}
+@media (max-width:38rem){.vow{grid-template-columns:1fr;gap:.3rem}}
+
+/* ───────── elevation / timeline ───────── */
+.profile-fig{margin-block:2.5rem 3.5rem}
+.profile-fig svg{width:100%;height:auto;display:block}
+.timeline{display:grid;gap:0;position:relative}
+.day{
+  display:grid;grid-template-columns:9.5rem 1fr;gap:clamp(1rem,3vw,2.5rem);
+  padding-block:2rem;
+}
+.day + .day{border-top:1px dashed var(--line)}
+.day-tag .d{font-family:var(--serif);font-weight:900;font-size:1.5rem;color:var(--ink)}
+.day-tag .t{color:var(--pine);font-size:.9rem;margin-top:.2rem}
+.day-tag .alt{color:var(--dim);font-size:.85rem;margin-top:.75rem;font-variant-numeric:tabular-nums}
+.day-body h3{font-size:1.2rem;margin-bottom:.6rem}
+.day-body ul{list-style:none;margin-top:.4rem}
+.day-body li{padding-left:1.4rem;position:relative;margin-block:.45rem}
+.day-body li::before{content:"";position:absolute;left:.15rem;top:.78em;width:.45rem;height:.45rem;border-radius:50%;background:var(--pine-deep)}
+.day-body li.gold::before{background:var(--dawn)}
+.day-body .hint{color:var(--dim);font-size:.9rem;margin-top:.9rem}
+@media (max-width:38rem){.day{grid-template-columns:1fr;gap:.6rem}}
+
+/* meal table + generic tables */
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+.table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:.6rem}
+.table-scroll table{min-width:34rem}
+th{font-family:var(--sans);font-weight:700;color:var(--ink);text-align:left;font-size:.85rem;background:var(--pine-wash);padding:.7rem 1rem;white-space:nowrap}
+td{padding:.7rem 1rem;border-top:1px solid var(--line);vertical-align:top}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.total td{background:var(--bg-raise);color:var(--ink);font-weight:700}
+.tnote{color:var(--dim);font-size:.875rem;margin-top:.8rem}
+
+/* plan C/D */
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+.plan{border:1px solid var(--line);border-radius:.6rem;padding:1.6rem 1.6rem 1.4rem;background:var(--bg-raise)}
+.plan .badge{font-family:var(--serif);font-weight:900;font-size:2rem;color:var(--dawn)}
+.plan h3{font-size:1.15rem;margin-top:.3rem}
+.plan .days{margin-top:1rem;display:flex;gap:.4rem;flex-wrap:wrap}
+.plan .days b{
+  font-weight:500;font-size:.85rem;border:1px solid var(--line);border-radius:.35rem;
+  padding:.2rem .6rem;color:var(--dim);white-space:nowrap
+}
+.plan .days b.on{border-color:var(--pine-deep);background:var(--pine-wash);color:var(--ink)}
+.plan p{margin-top:1rem;font-size:.95rem}
+
+/* checklist */
+.gear-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+.gear-group{border:1px solid var(--line);border-radius:.6rem;padding:1.35rem 1.5rem;background:var(--bg-raise)}
+.gear-group h3{font-size:1.02rem;color:var(--pine);margin-bottom:.8rem}
+.check{display:flex;gap:.75rem;align-items:flex-start;padding-block:.42rem;cursor:pointer;font-size:.95rem}
+.check input{
+  appearance:none;flex:none;width:1.15rem;height:1.15rem;margin-top:.32em;
+  border:1.5px solid var(--dim);border-radius:.3rem;cursor:pointer;position:relative;
+  transition:background .15s cubic-bezier(.19,1,.22,1),border-color .15s;
+  background:transparent;
+}
+.check input:checked{background:var(--pine);border-color:var(--pine)}
+.check input:checked::after{
+  content:"";position:absolute;left:.3rem;top:.09rem;width:.28rem;height:.62rem;
+  border:solid var(--bg);border-width:0 2px 2px 0;transform:rotate(42deg);
+}
+.check input:focus-visible{outline:2px solid var(--dawn);outline-offset:2px}
+.check.done span{color:var(--dim);text-decoration:line-through;text-decoration-color:var(--pine-deep)}
+.check small{display:block;color:var(--dim);font-size:.82rem}
+.check.done small{text-decoration:none}
+.gear-progress{margin-top:1.75rem;color:var(--dim);font-size:.9rem;font-variant-numeric:tabular-nums}
+.gear-progress b{color:var(--dawn);font-family:var(--serif);font-size:1.05rem}
+.gear-reset{margin-left:1rem;background:none;border:1px solid var(--line);color:var(--dim);border-radius:.35rem;padding:.25rem .7rem;font-size:.8rem;cursor:pointer;font-family:var(--sans)}
+.gear-reset:hover{color:var(--ink);border-color:var(--dim)}
+
+/* rules */
+.rules{display:grid;gap:0;border:1px solid var(--line);border-radius:.6rem;overflow:hidden}
+.rule{display:grid;grid-template-columns:10rem 1fr;gap:1.25rem;padding:1.15rem 1.5rem}
+.rule:nth-child(odd){background:var(--bg-raise)}
+.rule .k{font-weight:700;color:var(--ink);font-size:.95rem}
+.rule p{font-size:.95rem}
+.rule p em{font-style:normal;color:var(--alert);font-weight:700}
+@media (max-width:38rem){.rule{grid-template-columns:1fr;gap:.25rem}}
+
+/* AMS two-block */
+.ams{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
+.ams-block{border:1px solid var(--line);border-radius:.6rem;padding:1.6rem;background:var(--bg-raise)}
+.ams-block h3{font-size:1.15rem;margin-bottom:1rem}
+.ams-block h3 span{color:var(--pine);font-family:var(--sans);font-weight:500;font-size:.85rem;display:block;margin-top:.2rem}
+.ams-block ol{margin-left:1.2rem}
+.ams-block li{margin-block:.55rem;font-size:.95rem}
+.grade{display:grid;gap:.6rem;margin-block:.9rem}
+.grade div{border:1px solid var(--line);border-radius:.45rem;padding:.7rem .95rem;font-size:.9rem}
+.grade .g1 b{color:var(--dawn)}
+.grade .g2{border-color:color-mix(in oklab,var(--alert) 45%,var(--line))}
+.grade .g2 b{color:var(--alert)}
+
+/* SOP */
+.sop{list-style:none;position:relative;margin-left:.4rem}
+.sop::before{content:"";position:absolute;left:.32rem;top:.6rem;bottom:.6rem;width:2px;background:var(--line)}
+.sop li{position:relative;padding:0 0 1.6rem 2rem}
+.sop li::before{
+  content:"";position:absolute;left:-.12rem;top:.42em;width:.95rem;height:.95rem;border-radius:50%;
+  background:var(--bg);border:2.5px solid var(--pine);
+}
+.sop li.now::before{background:var(--dawn);border-color:var(--dawn)}
+.sop .when{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:1.05rem}
+.sop p{font-size:.95rem;margin-top:.3rem}
+
+/* phones */
+.phones{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.phone{border:1px solid var(--line);border-radius:.6rem;padding:1.1rem 1.3rem;background:var(--bg-raise)}
+.phone .who{font-size:.875rem;color:var(--dim)}
+.phone .num{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:1.1rem;margin-top:.25rem;font-variant-numeric:tabular-nums}
+.phone .num a{color:var(--ink);text-decoration:none}
+.phone .use{font-size:.82rem;color:var(--dim);margin-top:.3rem}
+.phone.sos{border-color:color-mix(in oklab,var(--alert) 45%,var(--line))}
+.phone.sos .num{color:var(--alert)}
+
+footer{border-top:1px solid var(--line);padding-block:2.5rem 3.5rem;color:var(--dim);font-size:.875rem}
+footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bottom:.4rem}
+
+/* reveal (enhance visible default) */
+.rv{opacity:1;transform:none}
+@media (prefers-reduced-motion:no-preference){
+  .js .rv{opacity:0;transform:translateY(14px);transition:opacity .7s cubic-bezier(.19,1,.22,1),transform .7s cubic-bezier(.19,1,.22,1)}
+  .js .rv.in{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="頁內導覽">
+  <div class="nav-inner">
+    <a class="nav-mark" href="#top">玉山 <span>3952</span></a>
+    <div class="nav-links">
+      <a href="#route">行程</a>
+      <a href="#cost">花費</a>
+      <a href="#gear">裝備</a>
+      <a href="#lottery">抽籤</a>
+      <a href="#rules">規則</a>
+      <a href="#safety">安全</a>
+      <a href="#sop">準備</a>
+      <a href="#phones">電話</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <svg class="hero-scene" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="oklch(0.10 0.012 265)"/>
+        <stop offset="0.55" stop-color="oklch(0.14 0.022 255)"/>
+        <stop offset="0.82" stop-color="oklch(0.24 0.045 240)"/>
+        <stop offset="1" stop-color="oklch(0.38 0.075 75)"/>
+      </linearGradient>
+      <linearGradient id="dawnline" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="oklch(0.55 0.1 60 / 0)"/>
+        <stop offset="0.5" stop-color="oklch(0.78 0.13 75 / 0.85)"/>
+        <stop offset="1" stop-color="oklch(0.55 0.1 60 / 0)"/>
+      </linearGradient>
+    </defs>
+    <rect width="1440" height="760" fill="url(#sky)"/>
+    <g fill="oklch(0.9 0.02 90)">
+      <circle cx="150" cy="90" r="1.3"/><circle cx="320" cy="150" r="1"/><circle cx="480" cy="60" r="1.5"/>
+      <circle cx="640" cy="180" r="1"/><circle cx="810" cy="90" r="1.2"/><circle cx="960" cy="200" r="1"/>
+      <circle cx="1100" cy="70" r="1.4"/><circle cx="1240" cy="160" r="1"/><circle cx="1380" cy="110" r="1.2"/>
+      <circle cx="240" cy="250" r="1"/><circle cx="720" cy="280" r="1.1"/><circle cx="1180" cy="260" r="1"/>
+      <circle cx="60" cy="180" r="1"/><circle cx="900" cy="40" r="1"/><circle cx="1320" cy="320" r="1"/>
+    </g>
+    <rect x="0" y="586" width="1440" height="3" fill="url(#dawnline)"/>
+    <path d="M0 640 L180 520 L340 600 L520 470 L700 590 L900 430 L1080 560 L1250 480 L1440 570 L1440 760 L0 760 Z"
+          fill="oklch(0.20 0.03 230)"/>
+    <path d="M0 690 L220 590 L400 660 L640 540 L840 650 L1010 520 L1200 640 L1440 560 L1440 760 L0 760 Z"
+          fill="oklch(0.16 0.025 200)"/>
+    <path d="M0 760 L0 700 L260 640 L520 710 L760 620 L980 700 L1230 630 L1440 690 L1440 760 Z"
+          fill="oklch(0.125 0.018 170)"/>
+    <g fill="oklch(0.85 0.12 80)">
+      <circle cx="1002" cy="688" r="2.4"/><circle cx="962" cy="678" r="2"/><circle cx="922" cy="684" r="1.8"/>
+      <circle cx="878" cy="668" r="2"/><circle cx="836" cy="658" r="1.6"/><circle cx="800" cy="648" r="1.6"/>
+    </g>
+  </svg>
+  <div class="wrap hero-inner">
+    <h1 class="rv">玉山主峰</h1>
+    <p class="alt rv">YUSHAN MAIN PEAK · 3,952 M</p>
+    <p class="lede rv">六到八個第一次爬玉山的人，四天三夜，在日出前站上台灣最高點。這一頁是我們的完整作戰計畫：從抽籤到登頂，每一步都查證過。</p>
+    <dl class="hero-facts rv">
+      <div><dt>行程</dt><dd>4 天 3 夜</dd></div>
+      <div><dt>隊伍</dt><dd>6–8 人</dd></div>
+      <div><dt>目標期間</dt><dd>10 月中–11 月中</dd></div>
+      <div><dt>總爬升</dt><dd>約 1,350 M</dd></div>
+    </dl>
+    <div class="countdown rv" id="countdown">
+      <span class="cd-label">距離投單開放</span>
+      <span class="cd-num" id="cd-num">—</span>
+      <span class="cd-date">週五案 8/16 開放・週日案 8/18 開放</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="summary">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>先記住這五件事</h2>
+      <p class="sub">整份計畫的骨架。其他都是展開。</p>
+    </div>
+    <div class="vows rv">
+      <div class="vow"><span class="k">目標</span><p>10 月中～11 月中，選<strong>週五（D 案）或週日（C 案）</strong>入住排雲山莊，隔天凌晨攻頂。</p></div>
+      <div class="vow"><span class="k">現在就做</span><p>名單一次到位（事後不能加人）、決定 C 或 D、找好留守人，<strong>8/16 起開始投單</strong>。</p></div>
+      <div class="vow"><span class="k alert">三個死線</span><p>中籤後 <strong>3 日內</strong>繳 480｜入園日<strong>前 5 日</strong>取消才退費｜東埔訂房確認後 <strong>3 日內</strong>匯款。</p></div>
+      <div class="vow"><span class="k alert">一條鐵律</span><p>可減人、<strong>不可換人、不可加人</strong>。投單名單就是最終名單。</p></div>
+      <div class="vow"><span class="k">最大風險</span><p>高山症。8 月中<strong>各自</strong>去家醫科拿藥，山上撤退聽領隊，不投票、不討價還價。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="route">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>行程・Day 1–4</h2>
+      <p class="sub">從 2,610 公尺的登山口，走到 3,952 公尺的日出。</p>
+    </div>
+
+    <figure class="profile-fig rv" aria-label="玉山主峰線海拔剖面圖">
+      <svg viewBox="0 0 1000 300" role="img" aria-label="海拔剖面：登山口 2,610 公尺、孟祿亭 2,838 公尺、排雲山莊 3,402 公尺、玉山主峰 3,952 公尺">
+        <defs>
+          <linearGradient id="pf" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="oklch(0.42 0.1 152 / 0.55)"/>
+            <stop offset="1" stop-color="oklch(0.42 0.1 152 / 0.02)"/>
+          </linearGradient>
+        </defs>
+        <polyline points="40,262 90,256 210,238 330,226 450,205 570,186 700,148 820,120 900,52"
+                  fill="none" stroke="oklch(0.74 0.125 152)" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M40 262 L90 256 L210 238 L330 226 L450 205 L570 186 L700 148 L820 120 L900 52 L900 290 L40 290 Z" fill="url(#pf)"/>
+        <g fill="oklch(0.95 0.005 150)" font-size="15" font-family="Noto Sans TC,sans-serif">
+          <circle cx="40" cy="262" r="4" fill="oklch(0.74 0.125 152)"/>
+          <text x="40" y="245" text-anchor="start">登山口 2,610</text>
+          <circle cx="210" cy="238" r="4" fill="oklch(0.74 0.125 152)"/>
+          <text x="210" y="221" text-anchor="middle">孟祿亭 2,838</text>
+          <circle cx="570" cy="186" r="4" fill="oklch(0.74 0.125 152)"/>
+          <text x="570" y="169" text-anchor="middle">白木林 3,093</text>
+          <circle cx="700" cy="148" r="5" fill="oklch(0.83 0.128 78)"/>
+          <text x="700" y="131" text-anchor="middle">排雲山莊 3,402</text>
+          <circle cx="900" cy="52" r="6" fill="oklch(0.83 0.128 78)"/>
+          <text x="898" y="34" text-anchor="middle" font-family="Noto Serif TC,serif" font-weight="700" font-size="17">主峰 3,952</text>
+        </g>
+        <g stroke="oklch(0.28 0.012 160)" stroke-dasharray="3 5">
+          <line x1="40" y1="290" x2="40" y2="268"/>
+          <line x1="700" y1="290" x2="700" y2="154"/>
+          <line x1="900" y1="290" x2="900" y2="58"/>
+        </g>
+        <g fill="oklch(0.68 0.015 150)" font-size="13" font-family="Noto Sans TC,sans-serif">
+          <text x="40" y="308" text-anchor="start">0 K</text>
+          <text x="700" y="308" text-anchor="middle">8.5 K</text>
+          <text x="900" y="308" text-anchor="middle">10.9 K</text>
+        </g>
+      </svg>
+    </figure>
+
+    <div class="timeline">
+      <article class="day rv">
+        <div class="day-tag"><div class="d">Day 1</div><div class="t">高度適應</div><div class="alt">台北 → 東埔山莊 2,580 M</div></div>
+        <div class="day-body">
+          <h3>先睡高一點，身體先習慣</h3>
+          <ul>
+            <li>10:00 台北出發，途中水里／信義<strong>外帶晚餐＋買隔日早餐</strong>（東埔山莊不供餐）</li>
+            <li>15:30 入住東埔山莊（500 元/人）；車停山莊前卸行李，再開回上東埔停車場</li>
+            <li>16:30 起有熱水澡，間數少，<strong>先洗再吃</strong>。這是上山前最後一次熱水澡</li>
+          </ul>
+        </div>
+      </article>
+      <article class="day rv">
+        <div class="day-tag"><div class="d">Day 2</div><div class="t">進排雲</div><div class="alt">8.5 K・爬升 800 M・5–7 小時</div></div>
+        <div class="day-body">
+          <h3>走進 3,402 公尺的雲裡</h3>
+          <ul>
+            <li>07:15 前在排雲登山服務中心報到（<strong>全員身分證正本</strong>），從東埔山莊步行前往即可</li>
+            <li>接駁車進登山口（150 元/人），08:00 前起登；午餐吃行動糧</li>
+            <li>下午抵排雲山莊，15:00 起憑訂餐紀錄領餐券與睡袋</li>
+            <li class="gold">晚餐（17:00–18:30）前逐人健康檢查，這是高山症觀察窗</li>
+          </ul>
+          <p class="hint">排雲無淋浴、無垃圾桶；熱水為飲用熱水。垃圾全數背下山。</p>
+        </div>
+      </article>
+      <article class="day rv">
+        <div class="day-tag"><div class="d">Day 3</div><div class="t">攻頂日</div><div class="alt">2.4 K・爬升 550 M・摸黑出發</div></div>
+        <div class="day-body">
+          <h3>頭燈、鐵鍊、然後是日出</h3>
+          <ul>
+            <li>凌晨依梯次用早早餐（01:30–03:30 供應），吃完即輕裝出發，領隊逐人查攻頂包</li>
+            <li class="gold">趕在日出（約 05:50–06:05）前登頂 3,952 M——台灣最高的日出</li>
+            <li>回排雲吃早午餐（08:00–10:00）、收裝，09:00 前離開</li>
+            <li>16:00 前通過孟祿亭（接駁末班 17:00 的安全閘門）→ 接駁回停車場</li>
+            <li>晚上住朋友家（信義鄉同富村），熱水澡＋慶功</li>
+          </ul>
+          <p class="hint">最後 300 公尺風口碎石鐵鍊段是全線最需要專注的一段：不推擠、跟緊隊伍。</p>
+        </div>
+      </article>
+      <article class="day rv">
+        <div class="day-tag"><div class="d">Day 4</div><div class="t">悠閒回程</div><div class="alt">信義 → 台北</div></div>
+        <div class="day-body">
+          <h3>睡飽再回家</h3>
+          <ul><li>行程留白，下山後想去哪，到時候再決定</li></ul>
+        </div>
+      </article>
+    </div>
+
+    <div class="table-scroll rv" style="margin-top:1.5rem">
+      <table>
+        <caption style="text-align:left;padding:.8rem 1rem;font-weight:700;color:var(--ink)">排雲套餐時間表（實際以雲之端訂餐通知為準）</caption>
+        <thead><tr><th>套餐內容</th><th>時間</th><th>對應行程</th></tr></thead>
+        <tbody>
+          <tr><td>領餐券＋睡袋</td><td class="num">Day 2 15:00 起</td><td>抵排雲辦入住後領取（以現場公告為準）</td></tr>
+          <tr><td>晚餐</td><td class="num">Day 2 17:00–18:30</td><td>用餐前做健康檢查</td></tr>
+          <tr><td>早早餐</td><td class="num">Day 3 01:30–03:30</td><td>攻頂前熱食；分到太晚的梯次就協調提早，或接受日出後登頂，不為趕日出趕路</td></tr>
+          <tr><td>早午餐</td><td class="num">Day 3 08:00–10:00</td><td>回排雲後，約 08:00–08:30 吃</td></tr>
+          <tr><td>睡袋歸還</td><td class="num">Day 3 離開前</td><td>09:00 前收裝一併歸還</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="cost">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>花費・每人</h2>
+      <p class="sub">全程約 <strong style="color:var(--dawn)">3,730–4,560 元</strong>。只有排雲床位費有繳費死線：中籤後 3 日內。</p>
+    </div>
+    <div class="table-scroll rv">
+      <table>
+        <thead><tr><th>類別</th><th>項目</th><th>金額（元）</th><th>備註</th></tr></thead>
+        <tbody>
+          <tr><td>固定</td><td>排雲山莊床位</td><td class="num">480</td><td>已預告調漲；<strong>中籤後 3 日內繳</strong></td></tr>
+          <tr><td>固定</td><td>排雲套餐（晚＋早早＋早午＋睡袋）</td><td class="num">1,050</td><td>自帶睡袋改單點 800、省 250</td></tr>
+          <tr><td>固定</td><td>東埔山莊住宿</td><td class="num">500</td><td>確認信後 3 日內匯款</td></tr>
+          <tr><td>固定</td><td>接駁車來回（玉山雲之端）</td><td class="num">300</td><td>延誤搭加班車時單程 150 → 200/人</td></tr>
+          <tr><td>固定</td><td>入園證＋入山證</td><td class="num">0</td><td>免費</td></tr>
+          <tr><td>估算</td><td>登山綜合保險</td><td class="num">150–300</td><td>確定成行後、出發前 1 天投保</td></tr>
+          <tr><td>估算</td><td>Day 1 晚餐＋Day 2 早餐</td><td class="num">300–400</td><td>山下外帶採買</td></tr>
+          <tr><td>估算</td><td>Day 3 慶功宴＋Day 4 午餐</td><td class="num">300–500</td><td>—</td></tr>
+          <tr><td>估算</td><td>行動糧</td><td class="num">200–300</td><td>Day 2 午餐</td></tr>
+          <tr><td>估算</td><td>Day 3 住宿（朋友家）</td><td class="num">0</td><td>—</td></tr>
+          <tr><td>分攤</td><td>油錢＋過路費（2 車 ÷ 6–8 人）</td><td class="num">450–730</td><td>約 1,800–2,200/車</td></tr>
+          <tr><td>分攤</td><td>上東埔停車費</td><td class="num">待確認</td><td>行前電洽</td></tr>
+          <tr class="total"><td colspan="2">合計</td><td class="num">約 3,730–4,560</td><td>以實際出席人數分攤</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tnote rv">多報者的排雲 480 由本人自繳；行事曆標記「入園日前 5 日」＝退費死線（實拿退 450）。</p>
+  </div>
+</section>
+
+<section id="gear">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>裝備檢查清單</h2>
+      <p class="sub">出發前一晚全隊逐項打勾，缺項先補再出發。勾選會存在你的手機裡，隨時回來續勾。</p>
+    </div>
+    <div class="gear-cols" id="gearlist">
+      <div class="gear-group rv">
+        <h3>證件與金錢</h3>
+        <label class="check"><input type="checkbox" data-k="id1"><span>身分證正本<small>沒帶拒絕入園</small></span></label>
+        <label class="check"><input type="checkbox" data-k="id2"><span>健保卡<small>下撤就醫用</small></span></label>
+        <label class="check"><input type="checkbox" data-k="id3"><span>入園許可證（電子檔全員＋紙本 1 份）<small>入園日前 5 日內才能下載</small></span></label>
+        <label class="check"><input type="checkbox" data-k="id4"><span>現金零錢<small>接駁、加班車、餐費</small></span></label>
+      </div>
+      <div class="gear-group rv">
+        <h3>穿著與保暖</h3>
+        <label class="check"><input type="checkbox" data-k="w1"><span>長袖排汗底層＋備用襪<small>忌純棉</small></span></label>
+        <label class="check"><input type="checkbox" data-k="w2"><span>輕量羽絨或刷毛中層<small>山頂近 0 度</small></span></label>
+        <label class="check"><input type="checkbox" data-k="w3"><span>防風防水外套＋雨衣褲<small>羽絨濕掉即失效</small></span></label>
+        <label class="check"><input type="checkbox" data-k="w4"><span>毛帽＋防風防水手套</span></label>
+        <label class="check"><input type="checkbox" data-k="w5"><span>中高筒登山鞋（已磨合）＋登山杖</span></label>
+      </div>
+      <div class="gear-group rv">
+        <h3>攻頂輕裝包</h3>
+        <label class="check"><input type="checkbox" data-k="s1"><span>頭燈＋備用電池<small>禁手持手電筒，雙手要抓鐵鍊</small></span></label>
+        <label class="check"><input type="checkbox" data-k="s2"><span>500ml 保溫瓶（熱水）＋行動糧</span></label>
+        <label class="check"><input type="checkbox" data-k="s3"><span>哨子<small>失散求援，每人一份</small></span></label>
+        <label class="check"><input type="checkbox" data-k="s4"><span>手機（貼身保暖）＋防水紙本卡<small>卡載電話＋行程</small></span></label>
+        <label class="check"><input type="checkbox" data-k="s5"><span>攻頂小背包<small>大背包留排雲</small></span></label>
+      </div>
+      <div class="gear-group rv">
+        <h3>個人藥品與雜項</h3>
+        <label class="check"><input type="checkbox" data-k="m1"><span>Diamox（醫囑）＋個人常用藥<small>每人自己就診</small></span></label>
+        <label class="check"><input type="checkbox" data-k="m2"><span>水袋或水瓶（總容量 1.5–2L）<small>沿途無補水點</small></span></label>
+        <label class="check"><input type="checkbox" data-k="m3"><span>離線地圖＋GPX 已下載<small>健行筆記／Hikingbook 擇一</small></span></label>
+        <label class="check"><input type="checkbox" data-k="m4"><span>水泡貼＋膠帶、電解質鹽糖</span></label>
+        <label class="check"><input type="checkbox" data-k="m5"><span>太陽眼鏡＋防曬乳<small>下山白天曝曬</small></span></label>
+        <label class="check"><input type="checkbox" data-k="m6"><span>耳塞、濕紙巾、行動電源、防水袋</span></label>
+        <label class="check"><input type="checkbox" data-k="m7"><span>垃圾袋＋衛生紙/夾鏈袋＋環保餐具<small>垃圾全背下山</small></span></label>
+        <label class="check"><input type="checkbox" data-k="m8"><span>（11 月場次）鏈式冰爪<small>視預報</small></span></label>
+      </div>
+    </div>
+    <p class="gear-progress rv"><b id="gear-count">0 / 22</b> 已完成
+      <button class="gear-reset" id="gear-reset" type="button">全部重來</button>
+    </p>
+  </div>
+</section>
+
+<section id="lottery">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>抽籤作戰</h2>
+      <p class="sub">排雲山莊 136 床，用抽的。我們的打法：週五案＋週日案並行、投到 11 月中為止。</p>
+    </div>
+
+    <div class="plans rv" style="margin-bottom:2.5rem">
+      <div class="plan">
+        <div class="badge">C</div>
+        <h3>週日入住</h3>
+        <div class="days"><b>六</b><b class="on">日・入園</b><b class="on">一・攻頂</b><b>二</b></div>
+        <p>請假：週一＋週二。非假日競爭少，<strong>中籤率相對最高</strong>。8/18 起開放投單。</p>
+      </div>
+      <div class="plan">
+        <div class="badge">D</div>
+        <h3>週五入住</h3>
+        <div class="days"><b>四</b><b class="on">五・入園</b><b class="on">六・攻頂</b><b>日</b></div>
+        <p>請假：週四＋週五。<strong>Day 4 是週日免請假</strong>，回程最從容。8/16 起開放投單。</p>
+      </div>
+    </div>
+
+    <div class="table-scroll rv">
+      <table>
+        <thead><tr><th>事項</th><th>規則</th></tr></thead>
+        <tbody>
+          <tr><td>平台</td><td>hike.taiwan.gov.tw（入園＋入山一站完成，<strong>免費</strong>）</td></tr>
+          <tr><td>投單窗口</td><td>入園日前 2 個月 ～ 前 5 天</td></tr>
+          <tr><td>抽籤</td><td>入園日前 1 個月，下午 3–4 時公開抽</td></tr>
+          <tr><td>床位</td><td>共 136 床。週五＝假日全數開抽；週日＝非假日約 112 床，但投單隊少、較好中</td></tr>
+          <tr><td>多投技巧</td><td>不同日期各投一案 OK；<strong>同一天一人只能在一隊</strong>（人頭重複申請會被查處）</td></tr>
+          <tr><td>沒中</td><td>備取留單等遞補；或抽籤公告後另送排隊遞補新案（受理至前 5 天）</td></tr>
+          <tr><td>中了</td><td><strong>3 日內繳 480 元/人</strong>，逾期自動退件</td></tr>
+          <tr><td>投單停損</td><td><strong>只投到 11 月中</strong>；之後易結冰、12 月底起雪季管制，新手隊不符資格。全槓龜就改明年 4 月後</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="rules">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>山屋規則・紅線</h2>
+      <p class="sub">中籤之後，這幾條踩了就是賠錢或停權。</p>
+    </div>
+    <div class="rules rv">
+      <div class="rule"><span class="k">換人／加人</span><p><em>一律禁止</em>。只可減人：退出者自己線上「個別取消」。</p></div>
+      <div class="rule"><span class="k">退出退費</span><p>前 5 日取消 → 實拿退 450；前 1 天 → 免罰不退費；沒取消也沒到 → <em>停權半年</em>。</p></div>
+      <div class="rule"><span class="k">換領隊</span><p>前 1 天可換、限 1 次。<em>領隊按「取消」＝取消全隊</em>，千萬別按錯。</p></div>
+      <div class="rule"><span class="k">颱風封園</span><p>全額退、不罰；不能改期，只能重抽。</p></div>
+      <div class="rule"><span class="k">沒封園但天氣差</span><p>出發前 2 天領隊決定 go／no-go；Day 3 最晚 05:00 出發，再晚就放棄主峰直接下山——<strong>山永遠在</strong>，行前全員同意。</p></div>
+      <div class="rule"><span class="k">東埔訂房</span><p>住宿日前 30 天內開訂（dongpusky.tw）；確認信後 3 日匯款。滿房備案：阿里山住宿（約 2,200 M，仍有適應效果）。</p></div>
+      <div class="rule"><span class="k">排雲訂餐</span><p>前 7 日完成預約；5 天前取消退款（扣 50）、前 2–4 天扣 50%、前 1 天不退。</p></div>
+      <div class="rule"><span class="k">保險</span><p>要「登山綜合險」不是旅平險（多數旅平險排除 3,000 M 以上）。確定成行後、出發前 1 天投保。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="safety">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>高山症與隊伍安全</h2>
+      <p class="sub">全員首登 3,952 M，這是整趟最大的風險。規則在山下講好，山上就不用吵。</p>
+    </div>
+    <div class="ams">
+      <div class="ams-block rv">
+        <h3>事前準備<span>藥先拿、規則先講好、保暖顧好</span></h3>
+        <ol>
+          <li><strong>決策權先講定</strong>：撤退聽領隊，不投票、不討價還價</li>
+          <li><strong>備藥</strong>：Diamox 需處方：8 月中就各自掛家醫科（醫師要逐人篩禁忌：磺胺類過敏、蠶豆症、肝腎疾病禁用；平地先試吃）</li>
+          <li><strong>保暖、避免忽冷忽熱</strong>：休息就加衣、起步前再脫、汗濕底層盡快換；失溫會誘發高山症</li>
+          <li><strong>感冒、發燒者直接退出</strong>（大幅提高肺水腫風險）</li>
+          <li>兩個強制檢查點：Day 2 抵排雲觀察 2–3 小時＋晚餐前逐人確認；Day 3 凌晨用餐時逐人問症狀</li>
+        </ol>
+      </div>
+      <div class="ams-block rv">
+        <h3>發生之後<span>先分級：輕度留莊、中重度通報莊主</span></h3>
+        <div class="grade">
+          <div class="g1"><b>輕度</b>　頭痛＋噁心／頭暈／異常疲倦 → 原地休息、<strong>不再上升</strong>；留排雲不攻頂，指定 1 人陪同</div>
+          <div class="g2"><b>中重度</b>　吃藥無效、嘔吐、走不直、意識混亂 → <strong>立即下撤就醫</strong>；第一動作通報排雲莊主：山莊有 PAC 加壓艙（等於下降 1,500 M）</div>
+        </div>
+        <ol>
+          <li>下撤鐵律：至少 2 人陪同，<strong>絕不留任何人單獨一人</strong></li>
+          <li>拆隊預案行前寫死：備位領隊帶下撤組、領隊續帶主隊；會合點固定＝排雲</li>
+          <li>車鑰匙 Day 3 統一放排雲大背包固定位置，下撤組經排雲取用</li>
+        </ol>
+      </div>
+      <div class="ams-block rv">
+        <h3>隊形與防失散<span>凌晨滿山燈海，極易跟錯隊</span></h3>
+        <ol>
+          <li>備位領隊開路控速、領隊壓後收隊；全程走<strong>最慢隊員</strong>的速度；兩兩 buddy 制</li>
+          <li>等齊點點名：孟祿亭（1.7K）、白木林（5.3K）；攻頂日主北岔路口、風口前</li>
+          <li>失散 SOP：原地停、吹哨三短聲、手機聯繫</li>
+          <li>每人一張防水紙本卡（電話＋行程摘要），手機沒電時的最後防線</li>
+        </ol>
+      </div>
+      <div class="ams-block rv">
+        <h3>領隊與留守人<span>山上有人管隊伍，山下有人管我們</span></h3>
+        <ol>
+          <li>領隊：報到代表全隊、每個休息點清點人數、每日向留守人回報</li>
+          <li>留守人（不上山）：拿完整行程表＋全員名單</li>
+          <li>回報節點：Day 2 抵排雲、Day 3 登頂後、Day 3 出登山口</li>
+          <li>超過約定時間 <strong>4 小時</strong>未回報且電話不通 → 留守人打排雲服務中心＋110</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sop">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>事前準備・時間軸</h2>
+      <p class="sub">照著走，一步都不會漏。</p>
+    </div>
+    <ol class="sop rv">
+      <li class="now">
+        <div class="when">現在</div>
+        <p>名單一次到位（含可能來的人，上限 12）・定領隊＋備位・決定 C/D・找留守人（申請必填）・開共用表單收個資・領隊註冊 hike.taiwan.gov.tw 帳號</p>
+      </li>
+      <li>
+        <div class="when">8/16 起</div>
+        <p>開始投單（週五案 8/16、週日案 8/18 開放；投到 11 月中）・各自掛家醫科拿 Diamox・領隊每天看 Email 含垃圾信匣</p>
+      </li>
+      <li>
+        <div class="when">9 月起</div>
+        <p>每週 2 次有氧或爬樓梯＋週末郊山、漸進負重到 8–10 kg・9 月中前裝備備齊・出發前 3–4 週全隊合走一次 6–8 小時中級山當驗收</p>
+      </li>
+      <li>
+        <div class="when">中籤當下</div>
+        <p>搶訂東埔 → 3 日內繳 480 → 雲之端訂餐 → 撤回其餘投單・行事曆標「前 5 日」退費死線</p>
+      </li>
+      <li>
+        <div class="when">出發前 1 週</div>
+        <p>看天氣與公告・前 5 日內下載入園許可證發全員・D-2 決定 go/no-go → D-1 投保・出發前一晚全隊跑一次上面的裝備打勾清單</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="phones">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>電話速查</h2>
+      <p class="sub">存進全員手機，也抄一份在防水紙本卡上。</p>
+    </div>
+    <div class="phones rv">
+      <div class="phone"><div class="who">玉管處排雲登山服務中心</div><div class="num"><a href="tel:049-270-2228">049-270-2228</a></div><div class="use">報到、停車費確認、山下緊急聯絡</div></div>
+      <div class="phone"><div class="who">玉管處入園服務小組</div><div class="num"><a href="tel:049-277-3121">049-277-3121 #627</a></div><div class="use">申請規則疑問</div></div>
+      <div class="phone"><div class="who">玉山雲之端（東埔山莊訂房）</div><div class="num"><a href="tel:0927-186-777">0927-186-777</a></div><div class="use">週一至五 9:00–18:00</div></div>
+      <div class="phone"><div class="who">登山口接駁車</div><div class="num"><a href="tel:0989-104-222">0989-104-222</a></div><div class="use">接駁與加班車預約</div></div>
+      <div class="phone"><div class="who">雲之端訂餐</div><div class="num"><a href="tel:0988-117-003">0988-117-003</a></div><div class="use">排雲餐食、睡袋、梯次</div></div>
+      <div class="phone sos"><div class="who">緊急求援</div><div class="num">山上 112／119・山下 110</div><div class="use">112 山區緊急・110 報案協尋</div></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="peak">玉山主峰・3,952 M</p>
+    <p>本頁依 2026-08 查證之官方規定整理（臺灣登山申請一站式服務網、玉山國家公園管理處、玉山雲之端）。金額與時程以申請當下官方系統為準。</p>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+
+/* countdown to 2026-08-16 (Fri-case opening) */
+(function(){
+  var el=document.getElementById('cd-num');
+  var label=document.querySelector('#countdown .cd-label');
+  var target=new Date(2026,7,16,0,0,0);
+  var now=new Date();
+  var diff=target-now;
+  if(diff<=0){
+    var t2=new Date(2026,7,18,0,0,0);
+    if(t2-now>0){label.textContent='週五案已開放・距週日案開放';diff=t2-now;}
+    else{label.textContent='投單已全面開放';el.textContent='GO';return;}
+  }
+  var days=Math.floor(diff/86400000);
+  var hrs=Math.floor(diff%86400000/3600000);
+  el.textContent=days+' 天 '+hrs+' 小時';
+})();
+
+/* gear checklist persistence */
+(function(){
+  var KEY='yushan-gear-v1';
+  var saved={};
+  try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+  var boxes=[].slice.call(document.querySelectorAll('#gearlist input[type=checkbox]'));
+  var count=document.getElementById('gear-count');
+  function update(){
+    var done=boxes.filter(function(b){return b.checked}).length;
+    count.textContent=done+' / '+boxes.length;
+    boxes.forEach(function(b){b.closest('.check').classList.toggle('done',b.checked)});
+  }
+  boxes.forEach(function(b){
+    if(saved[b.dataset.k])b.checked=true;
+    b.addEventListener('change',function(){
+      saved[b.dataset.k]=b.checked;
+      try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}
+      update();
+    });
+  });
+  document.getElementById('gear-reset').addEventListener('click',function(){
+    boxes.forEach(function(b){b.checked=false});
+    saved={};
+    try{localStorage.removeItem(KEY)}catch(e){}
+    update();
+  });
+  update();
+})();
+
+/* reveal on scroll — enhances an already-visible default */
+(function(){
+  if(!('IntersectionObserver' in window)){return}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+    });
+  },{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  /* safety: everything visible after 2s regardless */
+  setTimeout(function(){
+    document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')});
+  },2000);
+})();
+</script>
+</body>
+</html>
