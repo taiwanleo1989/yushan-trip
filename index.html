@@ -223,6 +223,21 @@ footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bot
   .js .rv{opacity:0;transform:translateY(14px);transition:opacity .7s cubic-bezier(.19,1,.22,1),transform .7s cubic-bezier(.19,1,.22,1)}
   .js .rv.in{opacity:1;transform:none}
 }
+
+/* 行程日期標籤：桌機一排四格，手機 2×2 */
+.trip-days{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin:0 0 1.75rem}
+.trip-days b{text-align:center;padding:.6rem .5rem;font-size:.95rem}
+
+/* 手機：只要上下滑，不用左右滑 */
+@media (max-width:38rem){
+  .trip-days{grid-template-columns:repeat(2,1fr)}
+  .nav-mark{display:none}
+  .nav-links{margin-left:0;width:100%;justify-content:space-between;gap:.5rem}
+  .table-scroll{overflow-x:visible}
+  .table-scroll table{min-width:0;font-size:.875rem}
+  th,td{padding:.6rem .65rem;white-space:normal}
+  td.num{white-space:normal}
+}
 </style>
 </head>
 <body>
@@ -354,7 +369,7 @@ footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bot
       </svg>
     </figure>
 
-    <div class="days rv" style="margin:0 0 1rem"><b>六 10/24</b><b class="on">日 10/25・入園</b><b class="on">一 10/26・攻頂</b><b>二 10/27</b></div>
+    <div class="days trip-days rv"><b>六 10/24・東埔</b><b class="on">日 10/25・排雲</b><b class="on">一 10/26・攻頂</b><b>二 10/27・回家</b></div>
 
     <div class="timeline">
       <article class="day rv">
