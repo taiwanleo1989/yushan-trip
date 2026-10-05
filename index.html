@@ -137,12 +137,12 @@ tr.total td{background:var(--wash);color:var(--ink);font-weight:700}
 .plan{border:1px solid var(--line);border-radius:.6rem;padding:1.6rem 1.6rem 1.4rem;background:var(--wash)}
 .plan .badge{font-family:var(--serif);font-weight:900;font-size:2rem;color:var(--sun-deep)}
 .plan h3{font-size:1.15rem;margin-top:.3rem}
-.plan .days{margin-top:1rem;display:flex;gap:.4rem;flex-wrap:wrap}
-.plan .days b{
+.days{margin-top:1rem;display:flex;gap:.4rem;flex-wrap:wrap}
+.days b{
   font-weight:500;font-size:.85rem;border:1px solid var(--line);border-radius:.35rem;
   padding:.2rem .6rem;color:var(--dim);white-space:nowrap;background:var(--bg)
 }
-.plan .days b.on{border-color:var(--grass);background:oklch(0.90 0.05 140);color:var(--ink)}
+.days b.on{border-color:var(--grass);background:oklch(0.90 0.05 140);color:var(--ink)}
 .plan p{margin-top:1rem;font-size:.95rem}
 
 /* checklist */
@@ -234,7 +234,6 @@ footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bot
       <a href="#route">行程</a>
       <a href="#cost">花費</a>
       <a href="#gear">裝備</a>
-      <a href="#lottery">名單</a>
       <a href="#safety">安全</a>
       <a href="#sop">準備</a>
       <a href="#phones">電話</a>
@@ -354,6 +353,8 @@ footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bot
         </g>
       </svg>
     </figure>
+
+    <div class="days rv" style="margin:0 0 1rem"><b>六 10/24</b><b class="on">日 10/25・入園</b><b class="on">一 10/26・攻頂</b><b>二 10/27</b></div>
 
     <div class="timeline">
       <article class="day rv">
@@ -516,23 +517,6 @@ footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bot
     <p class="gear-progress rv"><b id="gear-count">0 / 24</b> 已完成
       <button class="gear-reset" id="gear-reset" type="button">全部重來</button>
     </p>
-  </div>
-</section>
-
-<section id="lottery">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <h2>名單</h2>
-      <p class="sub">10/25 排雲已中籤，名單鎖定 5 人。</p>
-    </div>
-    <div class="plans rv" style="margin-bottom:2.5rem">
-      <div class="plan">
-        <div class="badge">✓</div>
-        <h3>我們的場次</h3>
-        <div class="days"><b>六 10/24</b><b class="on">日 10/25・入園</b><b class="on">一 10/26・攻頂</b><b>二 10/27</b></div>
-        <p>請假：10/26（一）、10/27（二）<br>5 人、1 車<br>領隊育蓉、備位信政、留守育蓉哥哥（不上山）</p>
-      </div>
-    </div>
   </div>
 </section>
 
