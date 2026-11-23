@@ -213,6 +213,7 @@ tr.total td{background:var(--wash);color:var(--ink);font-weight:700}
 .phone .use{font-size:.82rem;color:var(--dim);margin-top:.3rem}
 .phone.sos{border-color:color-mix(in oklab,var(--alert) 45%,var(--line))}
 .phone.sos .num{color:var(--alert)}
+.weather-note{color:var(--dim);font-size:.9rem;margin-top:1rem}
 
 footer{border-top:1px solid var(--line);padding-block:2.5rem 3.5rem;color:var(--dim);font-size:.875rem;background:var(--wash)}
 footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bottom:.4rem}
@@ -257,6 +258,7 @@ footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bot
       <a href="#gear">裝備</a>
       <a href="#safety">安全</a>
       <a href="#sop">準備</a>
+      <a href="#weather">天氣</a>
       <a href="#phones">電話</a>
     </div>
   </div>
@@ -688,7 +690,7 @@ footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bot
       </li>
       <li>
         <div class="when">11/25</div>
-        <p>投登山綜合險<br>看玉山預報、領隊定 go／no-go<br>打信義工務段確認明隧道管制已解除<br>晚上全隊跑一次裝備檢查清單</p>
+        <p>投登山綜合險<br>看<a href="https://www.cwa.gov.tw/V8/C/L/Mountain/Mountain.html?PID=D080" target="_blank" rel="noopener">玉山登山預報</a>、領隊定 go／no-go<br>打信義工務段確認明隧道管制已解除<br>晚上全隊跑一次裝備檢查清單</p>
       </li>
       <li>
         <div class="when">11/26 前</div>
@@ -699,6 +701,21 @@ footer .peak{font-family:var(--serif);color:var(--ink);font-size:1rem;margin-bot
         <p>09:00 桃園車站出發</p>
       </li>
     </ol>
+  </div>
+</section>
+
+<section id="weather">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>天氣與風況</h2>
+      <p class="sub">山下天氣好，不代表山上安全。出發前、每天出門前都看一次。</p>
+    </div>
+    <div class="phones rv">
+      <div class="phone"><div class="who">氣象署・玉山登山預報（最推薦）</div><div class="num"><a href="https://www.cwa.gov.tw/V8/C/L/Mountain/Mountain.html?PID=D080" target="_blank" rel="noopener">打開預報 ↗</a></div><div class="use">72 小時逐時：溫度、體感溫度、降雨機率、風力、風向，另有一週預報<br>11/25 定 go／no-go 就看這頁</div></div>
+      <div class="phone"><div class="who">氣象署・玉山氣象站即時觀測</div><div class="num"><a href="https://www.cwa.gov.tw/V8/C/W/OBS_Station.html?ID=46755" target="_blank" rel="noopener">看現在實測 ↗</a></div><div class="use">北峰 3,858 M，每 10 分鐘一筆<br>11/23 查時風速儀器故障，只看得到溫度</div></div>
+      <div class="phone"><div class="who">Windy・風場動畫</div><div class="num"><a href="https://www.windy.com/23.470/120.957/wind?23.470,120.957,11" target="_blank" rel="noopener">看風怎麼吹 ↗</a></div><div class="use">陣風、雲量、強風從哪個方向來<br>可比較不同預報模型</div></div>
+    </div>
+    <p class="weather-note">風力看「蒲福風級」：2～3 級微風幾乎沒感覺・5～6 級主峰稜線會明顯變冷・7 級以上空曠處走路吃力</p>
   </div>
 </section>
 
